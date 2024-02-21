@@ -18,10 +18,10 @@ namespace Mission06_Matte.Models
         public string Director { get; set; }
         [Required]
         public string Rating { get; set; }
-        public bool Edited { get; set; }
-        public string Lentto { get; set; }
+        public bool? Edited { get; set; }
+        public string? Lentto { get; set; }
         [MaxLength(25)]
-        public string Notes { get; set; }
+        public string? Notes { get; set; }
 
 
 
