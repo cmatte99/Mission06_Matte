@@ -1,11 +1,41 @@
 ﻿@{
     ViewData["Title"] = "Get to Know Joel";
 }
-<h1>@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+    <!-- Page title -->
+    <title>@ViewData["Title"]</title>
+</head>
+<body class="bg-light">
 
-<p>  <a href="https://www.qwcomedy.com/"> Quick Wits Comedy</a></p>
-<p>  <a href="https://baconsale.com/"> Baconsale Podcast</a></p>
-<p>  <a href="https://byu.box.com/s/ie6ibeddqm0f6oudp7bc5dyt87zxi2u4"> Baconsale Podcast</a></p>
+    <div class="container mt-5">
+        <!-- Page heading with Bootstrap classes -->
+        <h1 class="mb-4">@ViewData["Title"]</h1>
 
+        <!-- Links with Bootstrap classes -->
+        <p class="mb-2"><a href="https://www.qwcomedy.com/" class="text-primary">Quick Wits Comedy</a></p>
+        <p class="mb-2"><a href="https://baconsale.com/" class="text-primary">Baconsale Podcast</a></p>
+        <p class="mb-2"><a href="https://byu.box.com/s/ie6ibeddqm0f6oudp7bc5dyt87zxi2u4" class="text-primary">Baconsale Picture</a></p>
+    </div>
 
+    <!-- Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
 
+</body>
+</html>

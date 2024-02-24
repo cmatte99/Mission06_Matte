@@ -11,8 +11,8 @@ using Mission06_Matte.Models;
 namespace Mission06_Matte.Migrations
 {
     [DbContext(typeof(MovieEntriesContext))]
-    [Migration("20240221201933_Take11")]
-    partial class Take11
+    [Migration("20240223221457_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,15 +20,46 @@ namespace Mission06_Matte.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.2");
 
-            modelBuilder.Entity("Mission06_Matte.Models.Application", b =>
+            modelBuilder.Entity("Mission06_Matte.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            CategoryName = "RomCom"
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            CategoryName = "Horror"
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            CategoryName = "Suspence"
+                        });
+                });
+
+            modelBuilder.Entity("Mission06_Matte.Models.Movies", b =>
                 {
                     b.Property<int>("MovieId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Director")
                         .IsRequired()
@@ -37,7 +68,7 @@ namespace Mission06_Matte.Migrations
                     b.Property<bool?>("Edited")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Lentto")
+                    b.Property<string>("LentTo")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Notes")
@@ -58,7 +89,18 @@ namespace Mission06_Matte.Migrations
 
                     b.HasKey("MovieId");
 
-                    b.ToTable("Applications");
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("Mission06_Matte.Models.Movies", b =>
+                {
+                    b.HasOne("Mission06_Matte.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId");
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

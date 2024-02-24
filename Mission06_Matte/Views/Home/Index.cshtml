@@ -2,8 +2,50 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">The Joel Hilton Film Collection</h1>
-    <img src="~/img/jh.jpg" />
-    <a asp-controller="Home" asp-action="AddMovie"> Add Movie to Collection</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous" />
+
+    <!-- Google Fonts - Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Page title -->
+    <title>@ViewData["Title"]</title>
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="display-4 text-primary font-weight-bold mb-4" style="font-family: 'Roboto', sans-serif;">The Joel Hilton Film Collection</h1>
+
+            <img src="~/img/jh.jpg" class="img-fluid rounded mb-4" alt="Joel Hilton Film Collection Image" />
+
+            <div class="d-flex justify-content-center">
+                <!-- Add Movie button with Bootstrap classes -->
+                <a asp-controller="Home" asp-action="AddMovie" class="btn btn-primary btn-lg mr-2">Add Movie to Collection</a>
+                <!-- View Movie List button with Bootstrap classes -->
+                <a asp-controller="Home" asp-action="Waitlist" class="btn btn-secondary btn-lg">View Movie List</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+</body>
+</html>
